@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Metadata Example</title>
+  </head>
+  <body>
+    <audio id="audio-element" src="./1022-You-were-a-teenager.mp3" autoplay
+           controls="true"
+           style="width: 512px; ">
+           Your browser does not support the <code>audio</code> element.
+    </audio>
+    <script> 
+      function loadedMetadata() {
+        channels          = audio.mozChannels;
+        rate              = audio.mozSampleRate;
+        frameBufferLength = audio.mozFrameBufferLength;      
+      } 
+      var audio = document.getElementById('audio-element'); 
+      audio.addEventListener('loadedmetadata', loadedMetadata, false);
+      audio.volume = 0.2;
+    </script>
+  </body>
+</html>
